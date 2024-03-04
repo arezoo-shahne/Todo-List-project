@@ -1,0 +1,223 @@
+@import url("./fonts.css");
+
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+:root {
+  --primaryColor: #db2777;
+  --secondaryColor: #f8f8f8;
+  --mainWhite: #fff;
+  --mainBlack: #222;
+  --mainGrey: #7c7c7c;
+  --secondayGrey: #eee6e6;
+  --mainSpacing: 0.1rem;
+  --mainTransition: all 0.3s linear;
+  --mainRed: rgb(248, 7, 7);
+  --bodyColor: #797474;
+  --checkedColor: #006400;
+  --editedColor: #eb7413;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: rgb(58, 56, 56);
+  font-family: Vazirmatn;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url(../assets/images/download.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* filter: blur(5px); */
+  background-blend-mode: multiply;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 2.5rem;
+}
+h1 {
+  color: var(--secondaryColor);
+  margin-top: 2.5rem;
+  font-size: 2.8rem;
+}
+.input_section {
+  display: flex;
+}
+form {
+  display: flex;
+  justify-content: space-between;
+  width: 40rem;
+  background-color: var(--mainWhite);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid var(--secondayGrey);
+}
+.input-box {
+  flex: 1;
+  font-weight: 500;
+}
+.input-box,
+.add-button,
+.edit-submit {
+  border: none;
+  outline: none;
+  background-color: none;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+.add-button {
+  color: var(--primaryColor);
+  cursor: pointer !important;
+}
+.add-button:hover {
+  background-color: var(--primaryColor);
+  color: var(--mainWhite);
+  transition: all 0.3s ease-in-out;
+}
+.filters {
+  color: var(--primaryColor);
+  appearance: none;
+  width: 15rem;
+  border: 2px solid var(--secondayGrey);
+  border-radius: 1rem;
+  padding: 1.2rem;
+  margin-left: 0.5rem;
+  outline: none;
+}
+/* .sort-section select { */
+
+/* .sort-section select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 1rem;
+  color: var(--primaryColor);
+  pointer-events: none;
+} */
+.todo-container {
+  width: 40rem;
+  margin-top: 1.8rem;
+}
+.todo-container ul {
+  display: block;
+  flex-direction: column;
+}
+.todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--mainWhite);
+  padding: 0.8rem;
+  border-radius: 1rem;
+  font-size: 1.6rem;
+  margin: 1rem;
+}
+
+.todo-title {
+  flex: 1;
+  color: var(--primaryColor);
+  font-weight: 600;
+}
+
+.todo button {
+  border: none;
+  outline: none;
+  padding: 0.4rem 0.5rem;
+  margin: 0 0.6rem;
+  border-radius: 0.5rem;
+  /* font-size: 2rem; */
+}
+.todo-dateCreated {
+  margin-right: 0.5rem;
+}
+.edited {
+  color: var(--editedColor);
+}
+.edited:hover {
+  background-color: var(--editedColor);
+  color: var(--mainWhite);
+}
+.checked {
+  color: var(--checkedColor);
+}
+.checked:hover {
+  background-color: var(--checkedColor);
+  color: var(--mainWhite);
+  transition: all 0.3s ease-in;
+}
+.deleted {
+  color: var(--mainRed);
+}
+.deleted:hover {
+  background-color: var(--mainRed);
+  color: var(--mainWhite);
+  transition: all 0.3s ease-in;
+}
+.edited,
+.deleted,
+.checked:hover {
+  cursor: pointer !important;
+}
+button > i {
+  pointer-events: none;
+}
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  background-color: rgb(0, 0, 0, 0.5);
+  backdrop-filter: blur(3px);
+  display: none;
+}
+
+.edit-input-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15rem auto;
+  width: 35rem;
+  height: 5rem;
+  background-color: var(--secondayGrey);
+  border-radius: 1rem;
+  overflow: hidden;
+  border: 2px solid var(--secondayGrey);
+  padding: 0.5rem;
+}
+.edit-input {
+  flex: 1;
+  border: 2px solid var(--secondayGrey);
+  padding: 0.9rem;
+  margin: 0.3rem;
+}
+.edit-submit {
+  color: var(--primaryColor);
+  cursor: pointer !important;
+  transition: all 0.2s ease-out;
+  border-radius: 0.5rem;
+}
+.edit-submit:hover {
+  border-radius: 0.5rem;
+  color: var(--mainWhite);
+  background-color: var(--primaryColor);
+  cursor: pointer !important;
+}

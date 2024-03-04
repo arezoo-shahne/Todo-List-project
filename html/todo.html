@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <title>Todo List</title>
+  </head>
+  <body>
+    <header>
+      <h1>TODO LIST</h1>
+    </header>
+    <section class="container">
+      <div class="input_section">
+        <form class="todo-form">
+          <input type="text" class="input-box" placeholder="Insert Your Todos Title"/>
+          <button class="add-button">
+            <i class="fa fa-plus-circle"></i>
+          </button>
+        </form>
+        <div class="sort-section">
+          <select name="filters" class="filters">
+            <option value="All">All</option>
+            <option value="Completed">Completed</option>
+            <option value="Un-Completed">Un-Completed</option>
+          </select>
+        </div>
+      </div>
+      <div class="todo-container">
+        <ul class="todo-items">
+          <!-- <li class="todo">
+                  <p class="todo-title">task 1</p>
+                  <span class="todo-dateCreated">1402/02/05</span>
+                  <button class="checked "><i class="fa fa-check"></i></button>
+                  <button class="deleted"><i class="fa fa-trash"></i></button>
+                </li> -->
+        </ul>
+      </div>
+    </section>
+
+    <div class="backdrop" style="display: none">
+      <form class="edit-input-box" style="display: none">
+        <input type="text" class="edit-input" placeholder="Update Your Todo Title" />
+        <button class="edit-submit">
+          <i class="fa fa-plus-circle"></i>
+        </button>
+      </form>
+    </div>
+    <script src="../js/todo.js"></script>
+  </body>
+</html>
