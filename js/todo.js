@@ -101,12 +101,12 @@ function openEditBackdrop(e) {
   backdrop.style.display = "flex";
   editForm.style.display = "flex";
   editForm.addEventListener("submit", updateNewTitle);
-  
+
   function updateNewTitle() {
     newTitle = editInputBox.value;
-    newTodo.title=newTitle;
-    saveAllTodos(todos)
-    filterTodos()
+    newTodo.title = newTitle;
+    saveAllTodos(todos);
+    filterTodos();
   }
 }
 
@@ -133,9 +133,17 @@ function checkTodo(e) {
   filterTodos();
 }
 
+function sortTodos(todos) {
+  return [...todos].sort((a, b) => {
+    const dateA = new Date(a.createAt).getTime();
+    const dateB = new Date(b.createAt).getTime();
+    return dateB - dateA;
+  });
+}
 function getAllTodos() {
   const savedTodos = JSON.parse(localStorage.getItem("todos")) || [];
-  return savedTodos;
+  console.log(sortTodos(savedTodos));
+  return sortTodos(savedTodos);
 }
 
 function savedTodos(todo) {
